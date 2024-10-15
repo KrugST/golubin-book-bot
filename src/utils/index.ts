@@ -4,6 +4,7 @@ interface inlineChapterButtons {
     callback_data: string;
 }
 
+// Old version, keybord with buttons
 const generateChapterNames = (numberOfChapters: number) => {
     const chapterNames: string[] = [];
     for (let i = 1; i <= numberOfChapters; i++) {
