@@ -1,17 +1,24 @@
+import sampleData from '../books/sample.json';
 
 interface inlineChapterButtons {
     text: string;
     callback_data: string;
 }
 
-// Old version, keybord with buttons
-const generateChapterNames = (numberOfChapters: number) => {
-    const chapterNames: string[] = [];
-    for (let i = 1; i <= numberOfChapters; i++) {
-        chapterNames.push(`Глава ${i}`);
-    }
-    return chapterNames;
+interface Chapter {
+    content: string;
+    order: number;
 }
+
+interface Book {
+    [key: string]: Chapter;
+}
+
+const book: Book = sampleData;
+
+const findChapterById = (chapterId: string): Chapter => {
+    return book[chapterId];
+};
 
 const generateChapterNamesInline = (numberOfChapters: number, buttonsPerRow: number) => {
     const chapterNames: inlineChapterButtons[] = [];
@@ -27,4 +34,9 @@ const generateChapterNamesInline = (numberOfChapters: number, buttonsPerRow: num
     return buttonRows;
 }
 
-export { generateChapterNames, generateChapterNamesInline }
+const getChapterContent = (chapterId: string) => {
+    const chapter: Chapter = findChapterById(chapterId);
+    return chapter?.content;
+};
+
+export { generateChapterNamesInline, getChapterContent }

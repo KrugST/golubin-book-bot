@@ -1,11 +1,9 @@
 import { config } from "./src/config";
 import { Telegraf } from 'telegraf'
-import { generateChapterNamesInline } from './src/utils'
+import { generateChapterNamesInline, getChapterContent } from './src/utils'
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
-
-bot.use(Telegraf.log())
-
-const chapterNamesInline = generateChapterNamesInline(12, 5)
+const bookChapterCount = 12; // Hardcoded for now
+const chapterNamesInline = generateChapterNamesInline(bookChapterCount, 5)
 
 bot.command("start", (ctx) => {
     ctx.reply("Оглавление", {
@@ -16,6 +14,16 @@ bot.command("start", (ctx) => {
         }
     });
 });
+
+for (let i = 1; i <= bookChapterCount; i++) {
+    const chapterId = `chapter-${i}`;
+    bot.action(chapterId, (ctx) => {
+        console.log(ctx);
+        const chapterContent = getChapterContent(chapterId);
+        ctx.reply(chapterContent);
+    });
+}
+
 
 bot.launch()
 

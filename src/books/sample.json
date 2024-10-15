@@ -1,0 +1,50 @@
+{
+    "chapter-1": {
+        "content": "Chapter 1: Introduction to the Golubin book store",
+        "order": 1
+    },
+    "chapter-2": {
+        "content": "Chapter 2: Setting up the Golubin book bot",
+        "order": 2
+    },
+    "chapter-3": {
+        "content": "Chapter 3: Creating a Telegram bot",
+        "order": 3
+    },
+    "chapter-4": {
+        "content": "Chapter 4: Creating a Golubin book store",
+        "order": 4
+    },
+    "chapter-5": {
+        "content": "Chapter 5: Creating a Golubin book bot",
+        "order": 5
+    },
+    "chapter-6": {
+        "content": "Chapter 6: Conclusion",
+        "order": 6
+    },
+    "chapter-7": {
+        "content": "Chapter 7: Resources",
+        "order": 7
+    },
+    "chapter-8": {
+        "content": "Chapter 8: About the author",
+        "order": 8
+    },
+    "chapter-9": {
+        "content": "Chapter 9: Acknowledgements",
+        "order": 9
+    },
+    "chapter-10": {
+        "content": "Chapter 10: Index",
+        "order": 10
+    },
+    "chapter-11": {
+        "content": "Chapter 11: Glossary",
+        "order": 11
+    },
+    "chapter-12": {
+        "content": "Chapter 12: Bibliography",
+        "order": 12
+    }
+}
