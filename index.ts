@@ -1,5 +1,5 @@
 import { config } from "./src/config";
-import { Context, Telegraf } from 'telegraf'
+import { Telegraf } from 'telegraf'
 import { generateChapterNamesInline, getChapterContent } from './src/utils'
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 const bookChapterCount = 12; // Hardcoded for now
