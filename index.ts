@@ -28,7 +28,7 @@ bot.command("start", (ctx) => {
 });
 
 bot.action("get-chapter-names", (ctx) => {
-    ctx.reply("Оглавление", chapterNamesKeyboard);
+    ctx.reply("Выберите главу:", chapterNamesKeyboard);
 });
 
 for (let i = 1; i <= bookChapterCount; i++) {
