@@ -1,10 +1,12 @@
 import { config } from "./src/config";
 import { Telegraf, Markup } from 'telegraf'
-import { generateChapterNames } from './src/utils'
+import { generateChapterNames, generateChapterNamesInline } from './src/utils'
 const bot = new Telegraf(config.TELEGRAM_BOT_TOKEN);
 
 bot.use(Telegraf.log())
+
 const chapterNames = generateChapterNames(12)
+const chapterNamesInline = generateChapterNamesInline(12, 5)
 
 bot.command('start', (ctx) => {
     return ctx.reply(
@@ -15,6 +17,16 @@ bot.command('start', (ctx) => {
     )
 })
 
+bot.command("inline", (ctx) => {
+    ctx.reply("Главы", {
+        reply_markup: {
+            inline_keyboard: [
+                /* Inline buttons. side-by-side */
+                ...chapterNamesInline,
+            ]
+        }
+    });
+});
 
 bot.launch()
 
